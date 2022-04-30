@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    	:root {
+  			--main-bg-color: #061424;
+            --house-bg-color: #f29539;
+		}
+
+        body {
+            background: var(--main-bg-color);
+        }
+        
+        .house {
+        	display: flex;
+            align-items: center;
+            flex-direction: column;
+        	width: 200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .house .front {
+        	background: var(--house-bg-color);
+            width: calc(100% - 40px);
+            height: 100px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .house .front .windows-panel {
+        	display: flex;
+            width: 55px;
+            height: 55px;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+        
+        .house .front .windows-panel .window {
+        	width: 20px;
+            height: 20px;
+            background: var(--main-bg-color);
+        }
+        
+        .house .front .door {
+        	background: #d66a2f;
+            width: 35px;
+          	height: 50px;
+          	align-self: end;
+            position: relative;
+        }
+        
+        /* door knob */
+        .house .front .door::before {
+        	content: ' ';
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--main-bg-color);
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            transform: translateY(-50%);
+        }
+        
+        .house .roof {
+        	border: 100px solid var(--house-bg-color);
+            border-top: 0;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            height: 100%;
+        }
+        
+        /* chimney */
+        .house .roof::before {
+        	background: var(--house-bg-color);
+        	content: ' ';
+            position: absolute;
+            width: 25px;
+            left: 0;
+            height: 75px;
+            transform: translate(150%, 20%);
+        }
+    </style>
+</head>
+<body>
+	<div class="house">
+    	<div class="roof">
+        </div>
+        <div class="front">
+        	<div class="windows-panel">
+            	<div class="window"></div>
+            	<div class="window"></div>
+                <div class="window"></div>
+            	<div class="window"></div>
+            </div>
+            <div class="door"></div>
+            <div class="windows-panel">
+            	<div class="window"></div>
+            	<div class="window"></div>
+                <div class="window"></div>
+            	<div class="window"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
